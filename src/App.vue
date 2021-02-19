@@ -15,9 +15,12 @@
       <div id="end">
         <div id="percentStat">
           <p id="percents">
-            {{ swipeAccept * (visibleCards.length + 1) * 20 }}%
 
             {{ swipeRejected * (visibleCards.length + 1) * 20 }}%
+
+
+            {{ swipeAccept * (visibleCards.length + 1) * 20 }}%
+
 
             {{ swipeSkipped * (visibleCards.length + 1) * 20 }}%
           </p>
