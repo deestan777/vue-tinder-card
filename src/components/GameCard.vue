@@ -10,9 +10,12 @@
     :style="{ transform: transformString }"
   >
     <div>
-    <img :src="getImgUrl(card.src)" style="width:100%; height:auto; margin-top:0" >
-    <p class="cardTitle">{{ card.class }}</p><br/>
-    <p>{{ card.text }}</p>
+      <img
+        :src="getImgUrl(card.src)"
+        style="width:100%; height:auto; margin-top:0"
+      />
+      <p class="cardTitle">{{ card.class }}</p>
+      <p class="cardDescription">{{ card.text }}</p>
     </div>
   </div>
 </template>
@@ -167,9 +170,8 @@ export default {
     },
 
     getImgUrl(pic) {
-  return require('../assets/' + pic);
-},
-
+      return require("../assets/" + pic);
+    }
   }
 };
 </script>
@@ -201,7 +203,10 @@ $fs-card-title: 1.125em;
   }
 
   display: flex;
-  max-height: 350px;
+  box-shadow: 0 0 10px black;
+  align-items: flex-start;
+  width: 340px;
+  height: 390px;
   margin: auto;
   font-size: $fs-h2;
   font-weight: $fw-bold;
@@ -214,9 +219,10 @@ $fs-card-title: 1.125em;
   user-select: none;
   pointer-events: none;
   will-change: transform, opacity;
-
-  height: 100vw;
-
+  img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
   &.isCurrent {
     pointer-events: auto;
   }
@@ -228,8 +234,20 @@ $fs-card-title: 1.125em;
 }
 
 .cardTitle {
-  margin: 0 0 15px;
+  text-align: left;
+  padding-top: 25px;
+  padding-left:40px ;
+  margin: 0 0 5px;
+  color: #8E9AD5;
   font-size: $fs-card-title;
+}
+.cardDescription{
+color:#2F2F2F;
+text-align: justify;
+padding: 0 40px;
+font-weight: 100;
+font-size:16px;
+line-height:19,6px;
 }
 
 @for $i from 1 through $cardsTotal {

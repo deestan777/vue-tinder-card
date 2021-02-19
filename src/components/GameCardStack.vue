@@ -18,15 +18,15 @@ import GameCard from "@/components/GameCard";
 
 export default {
   components: {
-    GameCard,
+    GameCard
   },
 
   props: {
     cards: {
       type: Array,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 };
 </script>
 
@@ -36,7 +36,7 @@ export default {
   display: flex;
   margin: auto auto;
   left: 50%;
-  top: 20%;
+  top: 10vh;
   width: 300px;
   justify-self: center;
 }
